@@ -15,6 +15,10 @@ var sortedArrayToBST = function(nums) {
     //need to find the root and then we can go from there
     //we want the root to be like the middle or something
     //use recursion to be able to loop through all the numbers
+    
+    //quick escape
+    if(!nums.length) return  null;
+
     function btree(left, right){
         //node is fine
         if(left > right){
