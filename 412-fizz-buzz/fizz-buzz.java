@@ -14,8 +14,7 @@ class Solution {
                 words.add("Fizz");
             }
             else{
-                String number = String.valueOf(i);
-                words.add(number);
+                words.add(String.valueOf(i));
             }
         }
 
