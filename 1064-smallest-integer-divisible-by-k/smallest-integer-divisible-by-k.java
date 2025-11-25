@@ -24,9 +24,12 @@ class Solution {
         //loop through untill we find a number which is divisable by k
         while(n % k != 0){
             n = (n * 10 + 1) % k;
+                //adding the % k helps with handling a larger number of 1s as it exceds the time limit
+
             count ++;
         }
         
+        //return the number of ones used
         return count;
         
     }
