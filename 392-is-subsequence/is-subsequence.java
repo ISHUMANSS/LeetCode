@@ -8,6 +8,9 @@ class Solution {
         //if our points for the two string match each other then we can move both of them to the next position
         //when we get to the end of s we can stop
 
+        if (s.length() == 0) return true;
+        if (s.equals(t)) return true;
+
         int s_pointer = 0;
         int t_pointer = 0;
 
