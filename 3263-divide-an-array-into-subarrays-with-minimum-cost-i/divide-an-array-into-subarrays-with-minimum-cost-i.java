@@ -16,8 +16,8 @@ class Solution {
         //this means we just need to find the next lowest 2
 
         int first = nums[0];
-        int min1 = 51;
-        int min2 = 51;
+        int min1 = Integer.MAX_VALUE;
+        int min2 = Integer.MAX_VALUE;
 
         //loop though the list
         //i needs to be 1 cause we alrady have to use 0
