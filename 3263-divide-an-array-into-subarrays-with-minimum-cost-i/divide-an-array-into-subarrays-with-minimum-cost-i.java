@@ -15,6 +15,7 @@ class Solution {
         //the first number will always one of the sub arrays 
         //this means we just need to find the next lowest 2
 
+        int first = nums[0];
         int min1 = 51;
         int min2 = 51;
 
@@ -35,6 +36,6 @@ class Solution {
 
 
 
-        return nums[0] + min1 + min2;
+        return first + min1 + min2;
     }
 }
