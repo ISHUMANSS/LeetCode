@@ -11,56 +11,36 @@ class Solution {
         
 
         //total length of the distinct elements
-        // int length = Integer.MIN_VALUE;;
+        int length = Integer.MIN_VALUE;;
 
-        // for(int i = 0; i < nums.length; i ++){
-        //     //create the sets to keep distinct all the numbers in
-        //     Set<Integer> evens = new HashSet<>();
-        //     Set<Integer> odds = new HashSet<>();
-        //     for(int j = i; j < nums.length; j++){
-        //         //check if the number is even
-        //         if(nums[j] % 2 == 0){
-        //             //add to the even set
-        //             evens.add(nums[j]);
-        //         }
-        //         else{
-        //             odds.add(nums[j]);
-        //         }
-        //         //check if the lengths of the sets are the same
-        //         if(evens.size() == odds.size()){
-        //             length = Math.max(length,j-i+1);
-        //         }
-        //     }
-        //     //there are no evens or odds
-        //     if(length == Integer.MIN_VALUE){
-        //         return 0;
-        //     }
-            
-
-        // }
-
-        // return length;
-        
-
-        int maxlen=Integer.MIN_VALUE;
-        for(int i=0;i<nums.length;i++){
-            HashSet<Integer> set1=new HashSet<>();
-            HashSet<Integer> set2=new HashSet<>();
-            for(int j=i;j<nums.length;j++){
-                if(nums[j]%2==0){
-                   set1.add(nums[j]);
+        for(int i = 0; i < nums.length; i ++){
+            //create the sets to keep distinct all the numbers in
+            Set<Integer> evens = new HashSet<>();
+            Set<Integer> odds = new HashSet<>();
+            for(int j = i; j < nums.length; j++){
+                //check if the number is even
+                if(nums[j] % 2 == 0){
+                    //add to the even set
+                    evens.add(nums[j]);
                 }
                 else{
-                    set2.add(nums[j]);
+                    odds.add(nums[j]);
                 }
-                if(set1.size()==set2.size()){
-                    maxlen=Math.max(maxlen,j-i+1);
+                //check if the lengths of the sets are the same
+                if(evens.size() == odds.size()){
+                    length = Math.max(length,j-i+1);
                 }
             }
         }
-        if(maxlen==Integer.MIN_VALUE){
-            return 0;
+
+        //there are no evens or odds
+        if(length == Integer.MIN_VALUE){
+                return 0;
         }
-        return maxlen;
+
+        return length;
+        
+
+      
     }
 }
