@@ -1,20 +1,13 @@
 class Solution {
     public int[] searchRange(int[] nums, int target) {
-
-
-
         int[] arr = {-1, -1};
 
         //quick exit array is to small
         if(arr.length == 0){
             return arr;
         }
-
-
         //run binary search and then use two pointers to find the outer edeges
         int res = binarySearch(nums, 0, nums.length - 1, target);
-
-
 
         //not found
         if(res == -1){
@@ -39,15 +32,10 @@ class Solution {
         arr[0] = left;
         arr[1] = right;
 
-
         return arr;
-
-
     }
 
-
     static int binarySearch(int a[], int l, int r, int x){
-
       	if (r >= l) {
             int m = l + (r - l) / 2;
 
