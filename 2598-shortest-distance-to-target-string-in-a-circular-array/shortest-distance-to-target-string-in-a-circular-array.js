@@ -1,0 +1,1 @@
+const closestTarget=(t,r,e)=>{const n=t.length;let o,s;for(o=0;o<n&&t[(e+o)%n]!==r;o++);if(o===n)return-1;for(s=0;s<n&&t[(e-s+n)%n]!==r;s++);return Math.min(o,s)};
