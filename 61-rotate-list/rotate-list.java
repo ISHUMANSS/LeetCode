@@ -16,7 +16,9 @@ class Solution{
         for(int i=1;i<steps;i++) newtail=newtail.next; 
 
         ListNode newhead=newtail.next; // head
-        newtail.next=null;
+        newtail.next=null; 
+
+        //da
 
         return newhead;
     }
