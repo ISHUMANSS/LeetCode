@@ -23,6 +23,8 @@ class Solution {
             }
         }
 
+        //lol
+
         return thirdMax == Long.MIN_VALUE ? (int) max : (int) thirdMax;
     }
 }
