@@ -4,7 +4,7 @@ class Solution {
     public int distributeCandies(int[] candyType) {
         //calculate the number of types of candies there are
 
-        int length = candyType.length;
+        int length = candyType.length / 2;
 
         int unique = Integer.MIN_VALUE;;
 
@@ -23,7 +23,7 @@ class Solution {
 
         //pick what is lower between all the types or the length of the array devided by 2
 
-        unique = Math.min(types, length / 2);
+        unique = Math.min(types, length);
 
 
 
