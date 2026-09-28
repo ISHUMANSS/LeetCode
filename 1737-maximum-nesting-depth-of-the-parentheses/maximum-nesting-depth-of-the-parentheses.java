@@ -6,7 +6,7 @@ class Solution {
 
         //if the open 
         int open = 0;
-        int closed = 0;
+        int nested = 0;
         for(int i = 0; i < s.length(); i++){
             //count the open number
             if(s.charAt(i) ==('(')){
@@ -19,13 +19,13 @@ class Solution {
 
 
             //if x is higher then why the nested is 
-            if (open > closed){ 
-                closed = open;
+            if (open > nested){ 
+                nested = open;
             }
 
         }
 
-        return closed;
+        return nested;
 
     }
 }
