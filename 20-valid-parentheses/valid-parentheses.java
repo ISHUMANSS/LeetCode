@@ -2,30 +2,50 @@ import java.util.Stack;
 
 class Solution {
     public boolean isValid(String s) {
-        Stack<Character> stack = new Stack<Character>();
-        
-        // Loop through every character in the string
-        for (char c : s.toCharArray()) {
-            // If the character is an opening bracket, push it onto the stack
-            if (c == '(' || c == '[' || c == '{') {
-                stack.push(c);
-            } else { // If the character is a closing bracket
-                // If the stack is empty, there is no matching opening bracket, so return false
-                if (stack.isEmpty()) {
-                    return false;
-                }
-                // Otherwise, get the top of the stack and check if it's the matching opening bracket
-                char top = stack.peek();
-                if ((c == ')' && top == '(') || (c == ']' && top == '[') || (c == '}' && top == '{')) {
-                    // If it is, pop the opening bracket from the stack
-                    stack.pop();
-                } else { // Otherwise, the brackets don't match, so return false
-                    return false;
-                }
+        //stack
+        //add to stack every open bracket
+        //when a close happens pop the top of the stack
+        Stack<Character> sta = new Stack<>();
+
+        for(int i = 0; i < s.length(); i++){
+            //put the starter character
+            if(s.charAt(i) == '(' || s.charAt(i) == '[' || s.charAt(i) == '{'){
+                sta.push(s.charAt(i));
             }
+            // s.push(s.charAt(i));
+            //if its a closing check the stack
+            if(s.charAt(i) == ')'){
+                if(sta.isEmpty()){
+                    return false;
+                }
+                if(sta.peek() != '('){
+                    return false;
+                }
+                sta.pop();                
+            }
+            else if(s.charAt(i) == ']'){
+                if(sta.isEmpty()){
+                    return false;
+                }
+                if(sta.peek() != '['){
+                    return false;
+                }
+                sta.pop();  
+            }
+            else if(s.charAt(i) == '}'){
+                if(sta.isEmpty()){
+                    return false;
+                }
+                if(sta.peek() != '{'){
+                    return false;
+                }
+                sta.pop();  
+            }
+
+            
+
         }
-        // If the stack is empty, all opening brackets have been closed, so return true
-        // Otherwise, there are unmatched opening brackets, so return false
-        return stack.isEmpty();
+        //check if the stack is empty
+        return sta.isEmpty();
     }
 }
